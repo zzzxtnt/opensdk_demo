@@ -1,2 +1,0 @@
-configurations.create("default")
-artifacts.add("default", file('openapi2-release.aar'))
