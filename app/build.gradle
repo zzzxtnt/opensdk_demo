@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
+    defaultConfig {
+        applicationId "com.didi.psng.demo"
+        minSdkVersion 9
+        targetSdkVersion 14
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir 'src/main/libs'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.google.code.gson:gson:2.3+'
+    compile project(':open')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile files('src/main/libs/locSDK_6.22.jar')
+}

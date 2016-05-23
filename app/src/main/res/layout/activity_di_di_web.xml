@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sdu.didi.openapi.DiDiWebActivity">
+
+    <LinearLayout
+        android:id="@+id/didi_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/didi_toolbar_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:text="返回" />
+
+        <TextView
+            android:id="@+id/didi_toolbar_close"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="关闭"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/didi_toolbar"
+        android:layout_alignTop="@id/didi_toolbar"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/didi_webview_title"
+        android:gravity="center"
+        android:maxWidth="140dp"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:textColor="@android:color/black" />
+
+    <WebView
+        android:id="@+id/didi_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/didi_toolbar" />
+
+</RelativeLayout>
