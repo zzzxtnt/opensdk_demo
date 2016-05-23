@@ -62,11 +62,7 @@ Manifest.permission.READ_PHONE_STATE
 Manifest.permission.WRITE_EXTERNAL_STORAGE
 ```
 
-定位：由于滴滴的服务依赖于定位，如果您没有主动传入定位信息则滴滴开放平台会自动定位，由于系统定位精度差定位速度慢，推荐您接入了第三方定位SDK并在1.中增加如下声明让滴滴开放平台直接使用第三方定位，如果没有引入第三方定位则建议直接传入定位信息。
-
-```
-DIOpenSDK.setMapSdkType(DIOpenSDK.MapLocationType.*)
-```
+定位：由于滴滴的服务依赖于定位，如果您没有主动传入定位信息则滴滴开放平台会自动定位，由于系统定位精度差定位速度慢，推荐您接入了第三方定位SDK.
 
 在传入已有坐标时对应的`maptype`参数如下表：
 
