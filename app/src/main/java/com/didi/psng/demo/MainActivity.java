@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 
 import com.sdu.didi.openapi.DIOpenSDK;
-import com.sdu.didi.openapi.DiDiWebActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,18 +16,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //一下两行代码在入口activity调用尽早调用，第一个参数为appid，第二个为secret
-        //这里只为了演示如何使用第三方定位，需要替换为程序内进入的第三方定位
-//        DIOpenSDK.setMapSdkType(DIOpenSDK.MapLocationType.SOSO);
-
+        //一下两行代码在入口activity调用尽早调用，第一个参数为appid，第二个为secret。
+        //http://open.xiaojukeji.com/这里可以申请
+        DIOpenSDK.registerApp(this, "appid", "secret");
     }
 
     //使用webapp
     public void DidiClick(View view) {
         HashMap<String, String> map = new HashMap<String, String>();
-        //如果程序没有接入第三方定位推荐直接传入坐标，因为系统定位性能比较差
-
-        DIOpenSDK.showDDPage(this, map, DiDiWebActivity.class);
+        DIOpenSDK.showDDPage(this, map);
     }
 
     //获取ticket
@@ -51,22 +47,25 @@ public class MainActivity extends Activity {
     public void DidiClick3(View view) {
         Map map = new HashMap<String, String>();
         map.put("page", "menu");
-//        DIOpenSDK.openPage(this, "invoice", map, null);
+        DIOpenSDK.openPage(this, "invoice", map, null);
     }
+
     //登录页面
     public void DidiClick4(View view) {
         Map map = new HashMap<String, String>();
         map.put("cardbind", "true");
         map.put("autoclose", "true");
-//        DIOpenSDK.openPage(this, "login", map, null);
+        DIOpenSDK.openPage(this, "login", map, null);
     }
+
     //订单详情
     public void DidiClick5(View view) {
         Map map = new HashMap<String, String>();
         map.put("biz", "2");
         map.put("oid", "这里需要传实际获取到的oid");
-//        DIOpenSDK.openPage(this, "orderDetail", map, null);
+        DIOpenSDK.openPage(this, "orderDetail", map, null);
     }
+
     //预估时间
     public void DidiClick6(View view) {
         //getEstimateTime
@@ -84,6 +83,7 @@ public class MainActivity extends Activity {
         });
 
     }
+
     //预估车费
     public void DidiClick7(View view) {
         Map map = new HashMap<String, String>();
@@ -116,16 +116,18 @@ public class MainActivity extends Activity {
 //        });
 
     }
+
     //打开订单列表界面
     public void DidiClick8(View view) {
         final HashMap<String, String> map = new HashMap<String, String>();
-//        DIOpenSDK.openPage(this, "orderList", map, new DIOpenSDK.DDCallBack() {
-//            @Override
-//            public void onFinish(Map<String, String> result) {
-//                Log.e("callback", result.toString());
-//            }
-//        });
+        DIOpenSDK.openPage(this, "orderList", map, new DIOpenSDK.DDCallBack() {
+            @Override
+            public void onFinish(Map<String, String> result) {
+                Log.e("callback", result.toString());
+            }
+        });
     }
+
     //获取当前进行中订单的司机信息
     public void DidiClick10(final View view) {
         Map map = new HashMap<String, String>();
@@ -139,6 +141,7 @@ public class MainActivity extends Activity {
             }
         });
     }
+
     //获取当前进行中的订单状态
     public void DidiClick9(View view) {
         Map map = new HashMap<String, String>();
