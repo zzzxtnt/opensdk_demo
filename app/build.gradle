@@ -40,5 +40,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3+'
     compile project(':open')
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
-    compile files('src/main/libs/locSDK_6.22.jar')
+    compile files('src/main/libs/AMap_Location_v2.3.0_20160112.jar')
 }
