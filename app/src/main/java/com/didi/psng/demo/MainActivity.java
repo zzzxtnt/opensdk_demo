@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         //一下两行代码在入口activity调用尽早调用，第一个参数为appid，第二个为secret。
         //http://open.xiaojukeji.com/这里可以申请
-        DIOpenSDK.registerApp(this, "appid", "secret");
+        DIOpenSDK.registerApp(this, "didi49694F49616E392B676D75715451", "68c9ca942789448e279b7944547cf394");
     }
 
     //使用webapp
