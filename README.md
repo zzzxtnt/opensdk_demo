@@ -70,7 +70,7 @@ Manifest.permission.WRITE_EXTERNAL_STORAGE
 ----|------|---- |
 腾讯soso | soso  |
 高德 | soso  |
-百度 | baidu  |
+百度 | bd09ll = baidu,默认坐标系为soso  |
 系统默认|wgs84|
 
 需要传参数的的Map的key，value都为String,返回值都为Map的key，value都为String,在返回的Map中包含`errorno`和`errormsg`，其中`errorno`为判断返回是否成功的标志，返回0为成功，具体返回值的含义需要根据服务器接口对应文档获取。
